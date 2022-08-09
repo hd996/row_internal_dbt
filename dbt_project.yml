@@ -6,15 +6,23 @@ version: '0.1'
 profile: 'row_internal_dbt'
 
 model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
 
-target-path: "target"
-clean-targets:
+target-path: "target" # directory which will store compiled SQL files
+clean-targets:        # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
     - "logs"
+packages-install-path: ../../dbt_packages # /tmp/workspace/189/0
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
   row_internal_dbt:
-      materialized: table
+      internal_growth:
+          +enabled: true
+          +materialized: table
