@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: admin_game_user_dsp3
+    description: admin_game_user_dsp3
+
+    columns:
+      - name: game_id
+        description: game_id
+
+      - name: user_id
+        description: user_id
