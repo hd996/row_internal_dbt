@@ -3,7 +3,7 @@ name: 'row_internal_dbt'
 config-version: 2
 version: '0.1'
 
-profile: 'row_internal_dbt'
+profile: 'dbt'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
